@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Bosniak Studies</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon"><img src="../images/logo.png" alt="Bosniak Studies Logo"></span>
+                <span class="logo-text">Bosniak<br><strong>Studies</strong></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="mission.html" class="nav-link">Our Mission</a></li>
+                <li><a href="associates.html" class="nav-link">Associates</a></li>
+                <li><a href="activities.html" class="nav-link">Activities</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <h1>About Bosniak Studies</h1>
+            <p>Dedicated to exploring the past, present, and future of Bosniak communities worldwide </p>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="content-section">
+            <h2>Who We Are</h2>
+            <p>Bosniak Studies is a leading academic platform dedicated to the scholarly exploration of Bosniak communities worldwide. We bring together researchers, scholars, and community members in a collaborative effort to advance knowledge about Bosniak history, culture, and society.</p>
+            <p>Our organization spans across multiple regions including Bosnia and Herzegovina, Sandžak, Kosovo, Macedonia, Türkiye, and extends to Bosniak diaspora communities globally. We believe in the power of rigorous scholarship to preserve heritage and foster understanding.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Academic Excellence</h3>
+                    <p>We are committed to the highest standards of scholarly research and analysis, ensuring accuracy and depth in all our work.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Cultural Preservation</h3>
+                    <p>We work to preserve and celebrate the rich cultural heritage of the Bosniak people for current and future generations.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Global Dialogue</h3>
+                    <p>We foster meaningful conversation among scholars and community members across continents and cultures.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Truth and Integrity</h3>
+                    <p>Following the wisdom of Hasan Kafi al-Aqhisari, we pursue truth with sincerity and integrity in all endeavors.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Areas of Focus</h2>
+            <div class="focus-list">
+                <div class="focus-item">
+                    <h4>History & Heritage</h4>
+                    <p>Exploring the rich historical narrative spanning from ancient times to the contemporary period</p>
+                </div>
+                <div class="focus-item">
+                    <h4>Culture & Traditions</h4>
+                    <p>Celebrating and documenting the unique cultural expressions and traditions of Bosniak communities</p>
+                </div>
+                <div class="focus-item">
+                    <h4>Language & Literature</h4>
+                    <p>Studying the Bosnian language and its literary contributions to global culture</p>
+                </div>
+                <div class="focus-item">
+                    <h4>Religion & Philosophy</h4>
+                    <p>Examining the philosophical and religious contributions of Bosniak thinkers and scholars</p>
+                </div>
+                <div class="focus-item">
+                    <h4>Contemporary Society</h4>
+                    <p>Understanding modern Bosniak communities and their role in contemporary global society</p>
+                </div>
+                <div class="focus-item">
+                    <h4>Global Diaspora</h4>
+                    <p>Researching Bosniak diaspora communities and their integration and contributions worldwide</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Our Team</h2>
+            <p>Bosniak Studies is staffed by dedicated scholars, researchers, and community members who are passionate about advancing knowledge and understanding of Bosniak heritage. Our team includes academics from various disciplines, ensuring a multidisciplinary approach to our work.</p>
+        </section>
+
+        <section class="content-section cta-section">
+            <h2>Get Involved</h2>
+            <p>We welcome scholars, researchers, and community members to join our growing network. Whether you're interested in contributing research, sharing insights, or simply supporting our mission, there are many ways to get involved.</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Contact Us</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Bosniak Studies</h4>
+                <p>Exploring the past, present, and future of Bosniak communities worldwide.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="mission.html">Our Mission</a></li>
+                    <li><a href="associates.html">Associates</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Email</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: BosniakStudies@gmail.com</p>
+                <p>Website: bosniakstudies.org</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bosniak Studies. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

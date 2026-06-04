@@ -1,0 +1,564 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Bosniak Studies</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        /* ── Board of Directors Section ── */
+        .board-section {
+            padding: 3rem 0;
+        }
+        .board-section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .board-section-header .org-eyebrow {
+            font-size: 12px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: #888;
+            margin: 0 0 8px;
+        }
+        .board-section-header h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 0 0 12px;
+            color: #1a1a1a;
+        }
+        .board-divider {
+            width: 52px;
+            height: 3px;
+            background: #185FA5;
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+        .tier-label {
+            font-size: 11px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: #888;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .officers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+        }
+        .member-card {
+            background: #fff;
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            transition: box-shadow 0.2s;
+        }
+        .member-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+        }
+        .member-card.president {
+            border: 2px solid #185FA5;
+            grid-column: span 2;
+        }
+        .avatar {
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .avatar-president { width: 50px; height: 50px; min-width: 50px; font-size: 16px; background: #E6F1FB; color: #0C447C; }
+        .av-blue   { background: #E6F1FB; color: #0C447C; }
+        .av-teal   { background: #E1F5EE; color: #085041; }
+        .av-amber  { background: #FAEEDA; color: #633806; }
+        .av-coral  { background: #FAECE7; color: #712B13; }
+        .av-purple { background: #EEEDFE; color: #3C3489; }
+        .av-pink   { background: #FBEAF0; color: #72243E; }
+        .av-green  { background: #EAF3DE; color: #27500A; }
+        .av-gray   { background: #F1EFE8; color: #444441; }
+        .role-badge {
+            display: inline-block;
+            font-size: 10.5px;
+            padding: 2px 9px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            font-weight: 600;
+            letter-spacing: .03em;
+            text-transform: uppercase;
+        }
+        .badge-blue   { background: #E6F1FB; color: #185FA5; }
+        .badge-amber  { background: #FAEEDA; color: #854F0B; }
+        .member-info { min-width: 0; }
+        .member-name {
+            font-size: 14.5px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 0 0 3px;
+            line-height: 1.3;
+        }
+        .member-role {
+            font-size: 12.5px;
+            color: #666;
+            margin: 0;
+            line-height: 1.4;
+        }
+        .co-card {
+            background: #fff;
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+        }
+        .co-card-label {
+            font-size: 11.5px;
+            color: #888;
+            font-weight: 600;
+            margin: 0 0 10px;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+        }
+        .co-person {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        .co-person:last-child { margin-bottom: 0; }
+        .avatar-sm {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .ethics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 10px;
+        }
+        .ethics-card {
+            background: #f9f9f7;
+            border: 1px solid #e8e8e8;
+            border-radius: 10px;
+            padding: .8rem 1rem;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .ethics-avatar {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 50%;
+            background: #F1EFE8;
+            color: #444441;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .ethics-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 0 0 2px;
+        }
+        .ethics-sub {
+            font-size: 11px;
+            color: #999;
+            margin: 0;
+        }
+        /* ── Newsletter Button ── */
+        .btn-newsletter {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            color: #185FA5;
+            border: 2px solid #185FA5;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .btn-newsletter:hover {
+            background: #185FA5;
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(24, 95, 165, 0.25);
+            text-decoration: none;
+        }
+        /* ── Newsletter Banner ── */
+        .newsletter-banner {
+            background: linear-gradient(135deg, #EBF3FC 0%, #F4F8FD 100%);
+            border: 1px solid #C8DDEF;
+            border-radius: 14px;
+            padding: 2rem 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .newsletter-banner-text h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0C447C;
+            margin: 0 0 4px;
+        }
+        .newsletter-banner-text p {
+            font-size: 14px;
+            color: #4a6a8a;
+            margin: 0;
+        }
+        @media (max-width: 600px) {
+            .member-card.president { grid-column: span 1; }
+            .newsletter-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon"><img src="../images/logo.png" alt="Bosniak Studies Logo"></span>
+                <span class="logo-text">Bosniak<br><strong>Studies</strong></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="mission.html" class="nav-link">Our Mission</a></li>
+                <li><a href="associates.html" class="nav-link">Associates</a></li>
+                <li><a href="activities.html" class="nav-link">Activities</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <h1>About Bosniak Studies</h1>
+            <p>Dedicated to exploring the past, present, and future of Bosniak communities worldwide</p>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="content-section">
+            <h2>Who We Are</h2>
+            <p>Bosniak Studies is a leading academic platform dedicated to the scholarly exploration of Bosniak communities worldwide. We bring together researchers, scholars, and community members in a collaborative effort to advance knowledge about Bosniak history, culture, and society.</p>
+            <p>Our organization spans across multiple regions including Bosnia and Herzegovina, Sandžak, Kosovo, Macedonia, Türkiye, and extends to Bosniak diaspora communities globally. We believe in the power of rigorous scholarship to preserve heritage and foster understanding.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Academic Excellence</h3>
+                    <p>We are committed to the highest standards of scholarly research and analysis, ensuring accuracy and depth in all our work.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Cultural Preservation</h3>
+                    <p>We work to preserve and celebrate the rich cultural heritage of the Bosniak people for current and future generations.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Global Dialogue</h3>
+                    <p>We foster meaningful conversation among scholars and community members across continents and cultures.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Truth and Integrity</h3>
+                    <p>Following the wisdom of Hasan Kafi al-Aqhisari, we pursue truth with sincerity and integrity in all endeavors.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Areas of Focus</h2>
+            <div class="focus-list">
+                <div class="focus-item">
+                    <h4>History &amp; Heritage</h4>
+                    <p>Exploring the rich historical narrative spanning from ancient times to the contemporary period</p>
+                </div>
+                <div class="focus-item">
+                    <h4>Culture &amp; Traditions</h4>
+                    <p>Celebrating and documenting the unique cultural expressions and traditions of Bosniak communities</p>
+                </div>
+                <div class="focus-item">
+                    <h4>Language &amp; Literature</h4>
+                    <p>Studying the Bosnian language and its literary contributions to global culture</p>
+                </div>
+                <div class="focus-item">
+                    <h4>Religion &amp; Philosophy</h4>
+                    <p>Examining the philosophical and religious contributions of Bosniak thinkers and scholars</p>
+                </div>
+                <div class="focus-item">
+                    <h4>Contemporary Society</h4>
+                    <p>Understanding modern Bosniak communities and their role in contemporary global society</p>
+                </div>
+                <div class="focus-item">
+                    <h4>Global Diaspora</h4>
+                    <p>Researching Bosniak diaspora communities and their integration and contributions worldwide</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Banner -->
+        <div class="newsletter-banner">
+            <div class="newsletter-banner-text">
+                <h3>Stay Informed</h3>
+                <p>Receive the latest research, news, and updates from Bosniak Studies directly in your inbox.</p>
+            </div>
+            <a href="https://bosniakstudies.org/lists/?p=subscribe&id=1" class="btn-newsletter" target="_blank" rel="noopener noreferrer">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                Subscribe to Our Newsletter
+            </a>
+        </div>
+
+        <!-- BOARD OF DIRECTORS -->
+        <section class="content-section board-section">
+
+            <div class="board-section-header">
+                <p class="org-eyebrow">Bosniak Studies</p>
+                <h2>Board of Directors</h2>
+                <div class="board-divider"></div>
+            </div>
+
+            <p class="tier-label">Executive Leadership</p>
+            <div class="officers-grid">
+
+                <div class="member-card president">
+                    <div class="avatar avatar-president av-blue">AA</div>
+                    <div class="member-info">
+                        <span class="role-badge badge-blue">President</span>
+                        <p class="member-name" style="font-size:16px">Adisa Avdić Küsmüş</p>
+                        <p class="member-role">Chair of the Board &amp; Executive President</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="avatar av-teal">GK</div>
+                    <div class="member-info">
+                        <span class="role-badge badge-amber">Vice President</span>
+                        <p class="member-name">Georgio Konstandi</p>
+                        <p class="member-role">Vice President</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="avatar av-coral">NH</div>
+                    <div class="member-info">
+                        <span class="role-badge badge-amber">Secretary</span>
+                        <p class="member-name">Najla Hrustanovic</p>
+                        <p class="member-role">Secretary</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="avatar av-amber">MH</div>
+                    <div class="member-info">
+                        <span class="role-badge badge-amber">Treasurer</span>
+                        <p class="member-name">Muris Hadžić</p>
+                        <p class="member-role">Treasurer</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="tier-label">Directors &amp; Coordinators</p>
+            <div class="officers-grid">
+
+                <div class="member-card">
+                    <div class="avatar av-purple">SP</div>
+                    <div class="member-info">
+                        <p class="member-name">Sabina Pačariz</p>
+                        <p class="member-role">Director of Ethics Committee</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="avatar av-teal">EŠ</div>
+                    <div class="member-info">
+                        <p class="member-name">Esad Širbegović</p>
+                        <p class="member-role">Director of Public Relations</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="avatar av-coral">MK</div>
+                    <div class="member-info">
+                        <p class="member-name">Mirsad Kriještorac</p>
+                        <p class="member-role">Special Events Coordinator</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="avatar av-green">ĐB</div>
+                    <div class="member-info">
+                        <p class="member-name">Džemil Bektović</p>
+                        <p class="member-role">Art &amp; Design Committee Coordinator</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="avatar av-gray">EZ</div>
+                    <div class="member-info">
+                        <p class="member-name">Emina Zoletić</p>
+                        <p class="member-role">Director of Memory Studies Award Committee</p>
+                    </div>
+                </div>
+
+                <div class="co-card">
+                    <p class="co-card-label">Bosnian State Institutions Coordinators</p>
+                    <div class="co-person">
+                        <div class="avatar-sm av-pink" style="background:#FBEAF0;color:#72243E;">MP</div>
+                        <span class="member-name" style="font-size:13.5px">Mirza Pojskić</span>
+                    </div>
+                    <div class="co-person">
+                        <div class="avatar-sm av-pink" style="background:#FBEAF0;color:#72243E;">MI</div>
+                        <span class="member-name" style="font-size:13.5px">Mirela Imširović</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="tier-label">Ethics Committee Members</p>
+            <div class="ethics-grid">
+
+                <div class="ethics-card">
+                    <div class="ethics-avatar">BÖ</div>
+                    <div>
+                        <p class="ethics-name">Başak Akar Özer</p>
+                        <p class="ethics-sub">Ethics Committee</p>
+                    </div>
+                </div>
+
+                <div class="ethics-card">
+                    <div class="ethics-avatar">AM</div>
+                    <div>
+                        <p class="ethics-name">Adnan Mahmutović</p>
+                        <p class="ethics-sub">Ethics Committee</p>
+                    </div>
+                </div>
+
+                <div class="ethics-card">
+                    <div class="ethics-avatar">ES</div>
+                    <div>
+                        <p class="ethics-name">Ermin Sinanović</p>
+                        <p class="ethics-sub">Ethics Committee</p>
+                    </div>
+                </div>
+
+                <div class="ethics-card">
+                    <div class="ethics-avatar">AB</div>
+                    <div>
+                        <p class="ethics-name">Adisa Busuladžić</p>
+                        <p class="ethics-sub">Ethics Committee</p>
+                    </div>
+                </div>
+
+                <div class="ethics-card">
+                    <div class="ethics-avatar">İG</div>
+                    <div>
+                        <p class="ethics-name">Ibrahim Fevzi Guven</p>
+                        <p class="ethics-sub">Ethics Committee</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="content-section">
+            <h2>Our Team</h2>
+            <p>Bosniak Studies is staffed by dedicated scholars, researchers, and community members who are passionate about advancing knowledge and understanding of Bosniak heritage. Our team includes academics from various disciplines, ensuring a multidisciplinary approach to our work.</p>
+        </section>
+
+        <section class="content-section cta-section">
+            <h2>Get Involved</h2>
+            <p>We welcome scholars, researchers, and community members to join our growing network. Whether you're interested in contributing research, sharing insights, or simply supporting our mission, there are many ways to get involved.</p>
+            <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:center; margin-top:1rem;">
+                <a href="contact.html" class="btn btn-primary btn-large">Contact Us</a>
+                <a href="https://bosniakstudies.org/lists/?p=subscribe&id=1" class="btn-newsletter" target="_blank" rel="noopener noreferrer">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                    Subscribe to Our Newsletter
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Bosniak Studies</h4>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="mission.html">Our Mission</a></li>
+                    <li><a href="associates.html">Associates</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Email</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: BosniakStudies@gmail.com</p>
+                <p>Website: bosniakstudies.org</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bosniak Studies. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
