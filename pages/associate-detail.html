@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associate Profile - Bosniak Studies</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon"><img src="../images/logo.png" alt="Bosniak Studies Logo"></span>
+                <span class="logo-text">Bosniak<br><strong>Studies</strong></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="mission.html" class="nav-link">Our Mission</a></li>
+                <li><a href="associates.html" class="nav-link active">Associates</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="associate-detail">
+            <div class="container">
+                <div class="associate-profile" id="associateProfile">
+                    <!-- Profile content will be loaded here by JavaScript -->
+                </div>
+                
+                <div class="related-associates">
+                    <h2>Other Associates</h2>
+                    <div class="associates-grid" id="relatedAssociates">
+                        <!-- Related associates will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="mission.html">Our Mission</a>
+                    <a href="associates.html">Associates</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="mission.html">Our Mission</a>
+                    <a href="associates.html">Associates</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: BosniakStudies@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <p>Social Media Links</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bosniak Studies. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/associates-profiles.js"></script>
+    <script>
+        // Load associate profile based on URL parameter
+        function loadAssociateProfile() {
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get('id');
+            
+            if (!slug) {
+                document.getElementById('associateProfile').innerHTML = '<p>Associate not found. <a href="associates.html">Return to Associates</a></p>';
+                return;
+            }
+            
+            const associate = getAssociateBySlug(slug);
+            
+            if (!associate) {
+                document.getElementById('associateProfile').innerHTML = '<p>Associate not found. <a href="associates.html">Return to Associates</a></p>';
+                return;
+            }
+            
+            // Display main profile
+            const profileHTML = `
+                <div class="profile-hero">
+                    <div class="profile-image">
+                        ${associate.imageUrl ? `<img src="../${associate.imageUrl}" alt="${associate.name}" />` : '<div class="no-image"><span>No Photo Available</span></div>'}
+                    </div>
+                    <div class="profile-header">
+                        <h1>${associate.name}</h1>
+                        <p class="profile-field">${associate.field}</p>
+                        <p class="profile-affiliation">${associate.affiliation}</p>
+                    </div>
+                </div>
+                
+                <div class="profile-bio">
+                    <h2>Biography</h2>
+                    <p>${associate.biography}</p>
+                </div>
+                
+                <div class="back-link">
+                    <a href="associates.html">&larr; Back to Associates</a>
+                </div>
+            `;
+            
+            document.getElementById('associateProfile').innerHTML = profileHTML;
+            
+            // Load related associates (random selection of 6)
+            loadRelatedAssociates(associate.slug);
+        }
+        
+        function loadRelatedAssociates(currentSlug) {
+            const allAssociates = getAllAssociates();
+            const related = allAssociates.filter(a => a.slug !== currentSlug).sort(() => Math.random() - 0.5).slice(0, 6);
+            
+            const relatedHTML = related.map(a => `
+                <a href="associate-detail.html?id=${a.slug}" class="associate-card-link">
+                    <div class="associate-card">
+                        <div class="associate-image">
+                            ${a.imageUrl ? `<img src="../${a.imageUrl}" alt="${a.name}" />` : '<div class="no-image"><span>No Photo</span></div>'}
+                        </div>
+                        <div class="associate-info">
+                            <h3>${a.name}</h3>
+                            <p class="field">${a.field}</p>
+                            <p class="affiliation">${a.affiliation}</p>
+                        </div>
+                    </div>
+                </a>
+            `).join('');
+            
+            document.getElementById('relatedAssociates').innerHTML = relatedHTML;
+        }
+                            <p class="field">${a.field}</p>
+                            <p class="affiliation">${a.affiliation}</p>
+                        </div>
+                    </div>
+                </a>
+            `).join('');
+            
+            document.getElementById('relatedAssociates').innerHTML = relatedHTML;
+        }
+        
+        // Load on page load
+        document.addEventListener('DOMContentLoaded', loadAssociateProfile);
+    </script>
+</body>
+</html>

@@ -1,0 +1,505 @@
+/* Responsive Design */
+
+/* Tablets - 768px and down */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        background-color: var(--bg-white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(26, 58, 82, 0.1);
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(26, 58, 82, 0.05);
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        color: var(--primary-color);
+        display: block;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background-color: rgba(212, 165, 116, 0.15);
+        color: var(--primary-color);
+    }
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .mission-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .mission-content h2 {
+        font-size: 2rem;
+    }
+
+    .mission-logo {
+        max-width: 250px;
+        max-height: 250px;
+    }
+
+    .visual-element {
+        width: 250px;
+        height: 250px;
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta h2 {
+        font-size: 2rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-section a {
+        display: inline-block;
+    }
+
+    .hero::before {
+        width: 400px;
+        height: 400px;
+        right: -25%;
+    }
+
+    .associates-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .search-input {
+        max-width: 100%;
+    }
+
+    .resources-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.25rem;
+    }
+
+    .resource-card {
+        padding: 1.5rem;
+    }
+
+    .resource-card h3 {
+        font-size: 1.05rem;
+    }
+}
+
+/* Mobile - 480px and down */
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 12px;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .hero {
+        height: 300px;
+        padding: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 1.5rem;
+    }
+
+    .mission {
+        padding: 3rem 1rem;
+    }
+
+    .mission-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .mission-content p {
+        font-size: 0.95rem;
+    }
+
+    .quote {
+        padding: 1.5rem;
+    }
+
+    .quote p {
+        font-size: 1rem;
+    }
+
+    .visual-element {
+        width: 200px;
+        height: 200px;
+    }
+
+    .featured {
+        padding: 3rem 1rem;
+    }
+
+    .featured h2 {
+        font-size: 1.8rem;
+    }
+
+    .featured-card {
+        padding: 1.5rem;
+    }
+
+    .featured-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .featured-card p {
+        font-size: 0.9rem;
+    }
+
+    .cta {
+        padding: 3rem 1rem;
+    }
+
+    .cta h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta p {
+        font-size: 1rem;
+    }
+
+    .mission-logo {
+        max-width: 180px;
+        max-height: 180px;
+    }
+
+    .footer {
+        padding: 2rem 1rem 1rem;
+    }
+
+    .footer-container {
+        gap: 1.5rem;
+    }
+
+    .footer-section h4 {
+        margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .hero::before {
+        width: 300px;
+        height: 300px;
+        right: -30%;
+    }
+}
+
+/* Associates responsive */
+@media (max-width: 768px) {
+    .associates-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Large screens - 1200px and up */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .hero-title {
+        font-size: 4.5rem;
+    }
+
+    .featured-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .mission-container {
+        grid-template-columns: 1.2fr 1fr;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .cta,
+    .footer {
+        display: none;
+    }
+
+    body {
+        font-size: 12pt;
+        color: #000;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+/* Accessibility - Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-light: #1a1a1a;
+        --bg-white: #2d2d2d;
+        --text-dark: #e0e0e0;
+    }
+
+    .stat-card,
+    .featured-card {
+        background: #333;
+    }
+
+    .mission-content p,
+    .featured-card p,
+    .stat-card p,
+    .quote p {
+        color: #ccc;
+    }
+
+    .quote {
+        background: rgba(212, 165, 116, 0.1);
+    }
+}
+
+/* Profile Page Responsive */
+@media (max-width: 768px) {
+    .profile-hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .profile-image {
+        order: -1;
+    }
+
+    .profile-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .profile-bio {
+        padding: 2rem;
+    }
+
+    .profile-bio h2 {
+        font-size: 1.5rem;
+    }
+
+    .related-associates .associates-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-field {
+        font-size: 1rem;
+    }
+
+    .profile-affiliation {
+        font-size: 0.9rem;
+    }
+
+    .profile-bio {
+        padding: 1.5rem;
+    }
+
+    .profile-bio p {
+        text-align: left;
+    }
+
+    .related-associates .associates-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Associates Page Responsive */
+@media (max-width: 768px) {
+    .associates-section {
+        padding: 2rem 0;
+    }
+
+    .section-intro h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-intro p {
+        font-size: 1rem;
+    }
+
+    .search-input {
+        max-width: 100%;
+        padding: 0.65rem 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    .associates-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .associate-image {
+        height: 200px;
+    }
+
+    .associate-info {
+        padding: 1.25rem;
+    }
+
+    .associate-info h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .associates-section {
+        padding: 1.5rem 0;
+    }
+
+    .section-intro h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .section-intro p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .search-container {
+        margin: 1.5rem 0 2rem;
+    }
+
+    .search-input {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .associates-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin-top: 2rem;
+    }
+
+    .associate-image {
+        height: 180px;
+    }
+
+    .associate-info {
+        padding: 1rem;
+    }
+
+    .associate-info h3 {
+        font-size: 0.95rem;
+    }
+
+    .associate-info .field,
+    .associate-info .affiliation {
+        font-size: 0.85rem;
+    }
+
+    .resources-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .resource-card {
+        padding: 1.5rem;
+    }
+
+    .resource-card h3 {
+        font-size: 1rem;
+    }
+
+    .resource-meta {
+        font-size: 0.85rem;
+    }
+
+    .resource-link {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.9rem;
+    }
+}
